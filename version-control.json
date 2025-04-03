@@ -1,5 +1,5 @@
 {
-  "name": "DT Oikos System",
+  "name": "Disciple Tools - Oikos Interchange",
   "version": "0.1.0",
   "last_updated": "2025-04",
   "author": "Disciple.Tools",
@@ -23,7 +23,7 @@
   },
   "icon": "https://raw.githubusercontent.com/DiscipleTools/disciple-tools-oikos-system/master/documentation/icon.png",
   "sections": {
-    "description": "DT Oikos System is a plugin that helps developers and integrators jumpstart their extension of the Disciple.Tools system.",
+    "description": "Disciple Tools - Oikos Interchange is a plugin that helps developers and integrators jumpstart their extension of the Disciple.Tools system.",
     "installation": "(Required) You must have Disciple.Tools Theme installed before using this plugin. Once Disciple.Tools is installed, you can use the normal Plugin system to install the plugin.",
     "changelog": ""
   }

@@ -1,6 +1,6 @@
 ![Build Status](https://github.com/DiscipleTools/disciple-tools-oikos-system/actions/workflows/ci.yml/badge.svg?branch=master)
 
-# DT Oikos System
+# Disciple Tools - Oikos Interchange
 
 __Kick start your Disciple.Tools plugin project with this template!__
 

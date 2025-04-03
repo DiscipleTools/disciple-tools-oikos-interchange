@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: DT Oikos System
+ * Plugin Name: Disciple Tools - Oikos Interchange
  * Plugin URI: https://github.com/DiscipleTools/disciple-tools-oikos-system
- * Description: DT Oikos System is intended to help developers and integrator jumpstart their extension of the Disciple.Tools system.
+ * Description: Disciple Tools - Oikos Interchange is intended to help developers and integrator jumpstart their extension of the Disciple.Tools system.
  * Text Domain: dt-oikos-system
  * Domain Path: /languages
  * Version:  0.1.0
@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Gets the instance of the `DT Oikos System` class.
+ * Gets the instance of the `Disciple Tools - Oikos Interchange` class.
  *
  * @since  0.1
  * @access public
@@ -53,13 +53,13 @@ function dt_oikos_system() {
         require_once get_template_directory() . '/dt-core/global-functions.php';
     }
 
-    return DT Oikos System::instance();
+    return Disciple Tools - Oikos Interchange::instance();
 }
 add_action( 'after_setup_theme', 'dt_oikos_system', 20 );
 
 //register the D.T Plugin
 add_filter( 'dt_plugins', function ( $plugins ){
-    $plugin_data = get_file_data( __FILE__, [ 'Version' => '0.1.0', 'Plugin Name' => 'DT Oikos System' ], false );
+    $plugin_data = get_file_data( __FILE__, [ 'Version' => '0.1.0', 'Plugin Name' => 'Disciple Tools - Oikos Interchange' ], false );
     $plugins['dt-oikos-system'] = [
         'plugin_url' => trailingslashit( plugin_dir_url( __FILE__ ) ),
         'version' => $plugin_data['Version'] ?? null,
@@ -74,7 +74,7 @@ add_filter( 'dt_plugins', function ( $plugins ){
  * @since  0.1
  * @access public
  */
-class DT Oikos System {
+class Disciple Tools - Oikos Interchange {
 
     private static $_instance = null;
     public static function instance() {
@@ -215,8 +215,8 @@ class DT Oikos System {
 
 
 // Register activation hook.
-register_activation_hook( __FILE__, [ 'DT Oikos System', 'activation' ] );
-register_deactivation_hook( __FILE__, [ 'DT Oikos System', 'deactivation' ] );
+register_activation_hook( __FILE__, [ 'Disciple Tools - Oikos Interchange', 'activation' ] );
+register_deactivation_hook( __FILE__, [ 'Disciple Tools - Oikos Interchange', 'deactivation' ] );
 
 
 if ( ! function_exists( 'dt_oikos_system_hook_admin_notice' ) ) {
@@ -224,7 +224,7 @@ if ( ! function_exists( 'dt_oikos_system_hook_admin_notice' ) ) {
         global $dt_oikos_system_required_dt_theme_version;
         $wp_theme = wp_get_theme();
         $current_version = $wp_theme->version;
-        $message = "'DT Oikos System' plugin requires 'Disciple.Tools' theme to work. Please activate 'Disciple.Tools' theme or make sure it is latest version.";
+        $message = "'Disciple Tools - Oikos Interchange' plugin requires 'Disciple.Tools' theme to work. Please activate 'Disciple.Tools' theme or make sure it is latest version.";
         if ( $wp_theme->get_template() === 'disciple-tools-theme' ){
             $message .= ' ' . sprintf( esc_html( 'Current Disciple.Tools version: %1$s, required version: %2$s' ), esc_html( $current_version ), esc_html( $dt_oikos_system_required_dt_theme_version ) );
         }

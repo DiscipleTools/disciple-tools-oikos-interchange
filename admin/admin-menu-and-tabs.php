@@ -2,23 +2,23 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly
 
 /**
- * Class DT Oikos System_Menu
+ * Class Disciple Tools - Oikos Interchange_Menu
  */
-class DT Oikos System_Menu {
+class Disciple Tools - Oikos Interchange_Menu {
 
     public $token = 'dt_oikos_system';
-    public $page_title = 'DT Oikos System';
+    public $page_title = 'Disciple Tools - Oikos Interchange';
 
     private static $_instance = null;
 
     /**
-     * DT Oikos System_Menu Instance
+     * Disciple Tools - Oikos Interchange_Menu Instance
      *
-     * Ensures only one instance of DT Oikos System_Menu is loaded or can be loaded.
+     * Ensures only one instance of Disciple Tools - Oikos Interchange_Menu is loaded or can be loaded.
      *
      * @since 0.1.0
      * @static
-     * @return DT Oikos System_Menu instance
+     * @return Disciple Tools - Oikos Interchange_Menu instance
      */
     public static function instance() {
         if ( is_null( self::$_instance ) ) {
@@ -37,7 +37,7 @@ class DT Oikos System_Menu {
 
         add_action( 'admin_menu', array( $this, 'register_menu' ) );
 
-        $this->page_title = __( 'DT Oikos System', 'dt-oikos-system' );
+        $this->page_title = __( 'Disciple Tools - Oikos Interchange', 'dt-oikos-system' );
     } // End __construct()
 
 
@@ -46,7 +46,7 @@ class DT Oikos System_Menu {
      * @since 0.1
      */
     public function register_menu() {
-        $this->page_title = __( 'DT Oikos System', 'dt-oikos-system' );
+        $this->page_title = __( 'Disciple Tools - Oikos Interchange', 'dt-oikos-system' );
 
         add_submenu_page( 'dt_extensions', $this->page_title, $this->page_title, 'manage_dt', $this->token, [ $this, 'content' ] );
     }
@@ -86,11 +86,11 @@ class DT Oikos System_Menu {
             <?php
             switch ( $tab ) {
                 case 'general':
-                    $object = new DT Oikos System_Tab_General();
+                    $object = new Disciple Tools - Oikos Interchange_Tab_General();
                     $object->content();
                     break;
                 case 'second':
-                    $object = new DT Oikos System_Tab_Second();
+                    $object = new Disciple Tools - Oikos Interchange_Tab_Second();
                     $object->content();
                     break;
                 default:
@@ -103,12 +103,12 @@ class DT Oikos System_Menu {
         <?php
     }
 }
-DT Oikos System_Menu::instance();
+Disciple Tools - Oikos Interchange_Menu::instance();
 
 /**
- * Class DT Oikos System_Tab_General
+ * Class Disciple Tools - Oikos Interchange_Tab_General
  */
-class DT Oikos System_Tab_General {
+class Disciple Tools - Oikos Interchange_Tab_General {
     public function content() {
         ?>
         <div class="wrap">
@@ -137,7 +137,7 @@ class DT Oikos System_Tab_General {
     }
 
     public function main_column() {
-        $token = DT Oikos System_Menu::instance()->token;
+        $token = Disciple Tools - Oikos Interchange_Menu::instance()->token;
         $this->process_form_fields( $token );
 
         $my_plugin_option = get_option( $token . '_my_plugin_option' );
@@ -210,9 +210,9 @@ class DT Oikos System_Tab_General {
 
 
 /**
- * Class DT Oikos System_Tab_Second
+ * Class Disciple Tools - Oikos Interchange_Tab_Second
  */
-class DT Oikos System_Tab_Second {
+class Disciple Tools - Oikos Interchange_Tab_Second {
     public function content() {
         ?>
         <div class="wrap">

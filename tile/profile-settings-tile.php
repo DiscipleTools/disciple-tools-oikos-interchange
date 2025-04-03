@@ -2,7 +2,7 @@
 if ( !defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 
 /**
- * Class DT Oikos System_Settings_Tile
+ * Class Disciple Tools - Oikos Interchange_Settings_Tile
  *
  * This class will add navigation and a custom section to the Settings page in Disciple.Tools.
  * The dt_profile_settings_page_menu function adds a navigation link to the bottom of the nav section in Settings.
@@ -12,7 +12,7 @@ if ( !defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
  * @see /rest-api/ in this plugin for a custom REST endpoint
  */
 
-class DT Oikos System_Settings_Tile
+class Disciple Tools - Oikos Interchange_Settings_Tile
 {
     private static $_instance = null;
     public static function instance() {
@@ -81,4 +81,4 @@ class DT Oikos System_Settings_Tile
     }
 }
 
-DT Oikos System_Settings_Tile::instance();
+Disciple Tools - Oikos Interchange_Settings_Tile::instance();

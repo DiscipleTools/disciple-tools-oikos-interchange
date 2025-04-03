@@ -10,7 +10,7 @@ In order to display the banner correctly on the Disciple.Tools Community Plugins
 
 ![Plugin Banner](https://raw.githubusercontent.com/DiscipleTools/disciple-tools-oikos-system/master/documentation/banner.png)
 
-# DT Oikos System
+# Disciple Tools - Oikos Interchange
 
 Description Description Description Description Description Description Description
 Description Description Description Description Description Description Description
