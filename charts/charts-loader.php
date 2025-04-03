@@ -1,7 +1,7 @@
 <?php
 if ( !defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 
-class Disciple Tools - Oikos Interchange_Charts
+class Disciple_Tools_Oikos_Interchange_Charts
 {
     private static $_instance = null;
     public static function instance(){
@@ -14,11 +14,11 @@ class Disciple Tools - Oikos Interchange_Charts
     public function __construct(){
 
         require_once( 'one-page-chart-template.php' );
-        new Disciple Tools - Oikos Interchange_Chart_Template();
+        new Disciple_Tools_Oikos_Interchange_Chart_Template();
 
         /**
          * @todo add other charts like the pattern above here
          */
     } // End __construct
 }
-Disciple Tools - Oikos Interchange_Charts::instance();
+Disciple_Tools_Oikos_Interchange_Charts::instance();

@@ -53,7 +53,7 @@ function dt_oikos_system() {
         require_once get_template_directory() . '/dt-core/global-functions.php';
     }
 
-    return Disciple Tools - Oikos Interchange::instance();
+    return Disciple_Tools_Oikos_Interchange::instance();
 }
 add_action( 'after_setup_theme', 'dt_oikos_system', 20 );
 
@@ -74,7 +74,7 @@ add_filter( 'dt_plugins', function ( $plugins ){
  * @since  0.1
  * @access public
  */
-class Disciple Tools - Oikos Interchange {
+class Disciple_Tools_Oikos_Interchange {
 
     private static $_instance = null;
     public static function instance() {
@@ -94,12 +94,9 @@ class Disciple Tools - Oikos Interchange {
             require_once( 'charts/charts-loader.php' );  // add custom charts to the metrics area
         }
 
-        require_once( 'tile/custom-tile.php' ); // add custom tile
         if ( 'settings' === dt_get_url_path() && ! $is_rest ) {
             require_once( 'tile/profile-settings-tile.php' ); // add custom settings page tile
         }
-
-        require_once( 'magic-link/magic-link-user-app.php' );
  
         if ( is_admin() ) {
             require_once( 'admin/admin-menu-and-tabs.php' ); // adds starter admin page and section for plugin
@@ -215,8 +212,8 @@ class Disciple Tools - Oikos Interchange {
 
 
 // Register activation hook.
-register_activation_hook( __FILE__, [ 'Disciple Tools - Oikos Interchange', 'activation' ] );
-register_deactivation_hook( __FILE__, [ 'Disciple Tools - Oikos Interchange', 'deactivation' ] );
+register_activation_hook( __FILE__, [ 'Disciple_Tools_Oikos_Interchange', 'activation' ] );
+register_deactivation_hook( __FILE__, [ 'Disciple_Tools_Oikos_Interchange', 'deactivation' ] );
 
 
 if ( ! function_exists( 'dt_oikos_system_hook_admin_notice' ) ) {

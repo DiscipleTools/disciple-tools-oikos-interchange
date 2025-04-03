@@ -1,7 +1,7 @@
 <?php
 if ( !defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 
-class Disciple Tools - Oikos Interchange_Endpoints
+class Disciple_Tools_Oikos_Interchange_Endpoints
 {
     /**
      * @todo Set the permissions your endpoint needs
@@ -60,4 +60,4 @@ class Disciple Tools - Oikos Interchange_Endpoints
         return $pass;
     }
 }
-Disciple Tools - Oikos Interchange_Endpoints::instance();
+Disciple_Tools_Oikos_Interchange_Endpoints::instance();

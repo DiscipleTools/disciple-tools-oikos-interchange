@@ -12,7 +12,7 @@ if ( !defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
  * @see /rest-api/ in this plugin for a custom REST endpoint
  */
 
-class Disciple Tools - Oikos Interchange_Settings_Tile
+class Disciple_Tools_Oikos_Interchange_Settings_Tile
 {
     private static $_instance = null;
     public static function instance() {
@@ -40,7 +40,7 @@ class Disciple Tools - Oikos Interchange_Settings_Tile
      */
     public function dt_profile_settings_page_menu( $dt_user, $dt_user_meta, $dt_user_contact_id, $contact_fields ) {
         ?>
-        <li><a href="#dt_oikos_system_settings_id"><?php esc_html_e( 'Custom Settings Section', 'dt-oikos-system' )?></a></li>
+        <li><a href="#dt_oikos_system_settings_id"><?php esc_html_e( 'Oikos Interchange System', 'dt-oikos-system' )?></a></li>
         <?php
     }
 
@@ -58,11 +58,12 @@ class Disciple Tools - Oikos Interchange_Settings_Tile
             <button class="help-button float-right" data-section="dt-oikos-system-help-text">
                 <img class="help-icon" src="<?php echo esc_html( get_template_directory_uri() . '/dt-assets/images/help.svg' ) ?>"/>
             </button>
-            <span class="section-header"><?php esc_html_e( 'Custom Settings Section', 'dt-oikos-system' )?></span>
+            <span class="section-header"><?php esc_html_e( 'Oikos Interchange System', 'dt-oikos-system' )?></span>
             <hr/>
 
             <!-- replace with your custom content -->
-            <p>Replace with your custom content</p>
+            <p>Oikos Interchange System connects your Disciple.Tools system to other Oikos Systems.</p>
+            <button class="button" id="dt-oikos-system-connect-button">Download</button>
 
         </div>
         <?php
@@ -81,4 +82,4 @@ class Disciple Tools - Oikos Interchange_Settings_Tile
     }
 }
 
-Disciple Tools - Oikos Interchange_Settings_Tile::instance();
+Disciple_Tools_Oikos_Interchange_Settings_Tile::instance();

@@ -6,7 +6,7 @@ if ( !defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
  * @todo also rename in charts-loader.php
  */
 
-class Disciple Tools - Oikos Interchange_Chart_Template extends DT_Metrics_Chart_Base
+class Disciple_Tools_Oikos_Interchange_Chart_Template extends DT_Metrics_Chart_Base
 {
     public $base_slug = 'dt-oikos-system-metrics'; // lowercase
     public $base_title = 'Disciple Tools - Oikos Interchange Metrics';

@@ -2,9 +2,9 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly
 
 /**
- * Class Disciple Tools - Oikos Interchange_Menu
+ * Class Disciple_Tools_Oikos_Interchange_Menu
  */
-class Disciple Tools - Oikos Interchange_Menu {
+class Disciple_Tools_Oikos_Interchange_Menu {
 
     public $token = 'dt_oikos_system';
     public $page_title = 'Disciple Tools - Oikos Interchange';
@@ -12,13 +12,13 @@ class Disciple Tools - Oikos Interchange_Menu {
     private static $_instance = null;
 
     /**
-     * Disciple Tools - Oikos Interchange_Menu Instance
+     * Disciple_Tools_Oikos_Interchange_Menu Instance
      *
-     * Ensures only one instance of Disciple Tools - Oikos Interchange_Menu is loaded or can be loaded.
+     * Ensures only one instance of Disciple_Tools_Oikos_Interchange_Menu is loaded or can be loaded.
      *
      * @since 0.1.0
      * @static
-     * @return Disciple Tools - Oikos Interchange_Menu instance
+     * @return Disciple_Tools_Oikos_Interchange_Menu instance
      */
     public static function instance() {
         if ( is_null( self::$_instance ) ) {
@@ -86,11 +86,11 @@ class Disciple Tools - Oikos Interchange_Menu {
             <?php
             switch ( $tab ) {
                 case 'general':
-                    $object = new Disciple Tools - Oikos Interchange_Tab_General();
+                    $object = new Disciple_Tools_Oikos_Interchange_Tab_General();
                     $object->content();
                     break;
                 case 'second':
-                    $object = new Disciple Tools - Oikos Interchange_Tab_Second();
+                    $object = new Disciple_Tools_Oikos_Interchange_Tab_Second();
                     $object->content();
                     break;
                 default:
@@ -103,12 +103,12 @@ class Disciple Tools - Oikos Interchange_Menu {
         <?php
     }
 }
-Disciple Tools - Oikos Interchange_Menu::instance();
+Disciple_Tools_Oikos_Interchange_Menu::instance();
 
 /**
- * Class Disciple Tools - Oikos Interchange_Tab_General
+ * Class Disciple_Tools_Oikos_Interchange_Tab_General
  */
-class Disciple Tools - Oikos Interchange_Tab_General {
+class Disciple_Tools_Oikos_Interchange_Tab_General {
     public function content() {
         ?>
         <div class="wrap">
@@ -137,7 +137,7 @@ class Disciple Tools - Oikos Interchange_Tab_General {
     }
 
     public function main_column() {
-        $token = Disciple Tools - Oikos Interchange_Menu::instance()->token;
+        $token = Disciple_Tools_Oikos_Interchange_Menu::instance()->token;
         $this->process_form_fields( $token );
 
         $my_plugin_option = get_option( $token . '_my_plugin_option' );
@@ -210,9 +210,9 @@ class Disciple Tools - Oikos Interchange_Tab_General {
 
 
 /**
- * Class Disciple Tools - Oikos Interchange_Tab_Second
+ * Class Disciple_Tools_Oikos_Interchange_Tab_Second
  */
-class Disciple Tools - Oikos Interchange_Tab_Second {
+class Disciple_Tools_Oikos_Interchange_Tab_Second {
     public function content() {
         ?>
         <div class="wrap">
