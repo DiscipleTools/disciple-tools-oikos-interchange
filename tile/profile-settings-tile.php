@@ -27,7 +27,16 @@ class Disciple_Tools_Oikos_Interchange_Settings_Tile
             add_action( 'dt_profile_settings_page_menu', [ $this, 'dt_profile_settings_page_menu' ], 100, 4 );
             add_action( 'dt_profile_settings_page_sections', [ $this, 'dt_profile_settings_page_sections' ], 100, 4 );
             add_action( 'dt_modal_help_text', [ $this, 'dt_modal_help_text' ], 100 );
+            add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
         }
+    }
+
+    public function enqueue_scripts() {
+        wp_enqueue_script( 'wp-api' );
+        wp_localize_script( 'wp-api', 'wpApiSettings', array(
+            'root' => esc_url_raw( rest_url() ),
+            'nonce' => wp_create_nonce( 'wp_rest' )
+        ));
     }
 
     /**
@@ -63,7 +72,39 @@ class Disciple_Tools_Oikos_Interchange_Settings_Tile
 
             <!-- replace with your custom content -->
             <p>Oikos Interchange System connects your Disciple.Tools system to other Oikos Systems.</p>
-            <button class="button" id="dt-oikos-system-connect-button">Download</button>
+            <input type="text" id="dt-oikos-system-adm-level" placeholder="Admin Level" value="0">
+            <input type="text" id="dt-oikos-system-lng" placeholder="Longitude" value="10.4049">
+            <input type="text" id="dt-oikos-system-lat" placeholder="Latitude" value="35.918">
+            <button class="button" id="dt-oikos-system-connect-button">Connect to Oikos System</button>
+            <script>
+                jQuery(document).ready(function($) {
+                    $('#dt-oikos-system-connect-button').on('click', function() {
+                        // Get values from input fields
+                        const params = {
+                            adm_level: $('#dt-oikos-system-adm-level').val() || null,
+                            lng: $('#dt-oikos-system-lng').val() || null,
+                            lat: $('#dt-oikos-system-lat').val() || null
+                        };
+                        
+                        // Call the REST API
+                        jQuery.ajax({
+                            url: window.wpApiSettings.root + 'dt-oikos-system/v1/phase',
+                            method: 'POST',
+                            beforeSend: function(xhr) {
+                                xhr.setRequestHeader('X-WP-Nonce', window.wpApiSettings.nonce);
+                            },
+                            data: params,
+                            success: function(response) {
+                                console.log('Oikos System API Response:', response);
+                            },
+                            error: function(xhr, status, error) {
+                                console.error('Oikos System API Error:', error);
+                                console.log('Response:', xhr.responseText);
+                            }
+                        });
+                    });
+                });
+            </script>
 
         </div>
         <?php

@@ -102,6 +102,10 @@ class Disciple_Tools_Oikos_Interchange {
             require_once( 'admin/admin-menu-and-tabs.php' ); // adds starter admin page and section for plugin
         }
 
+        require_once( 'rest-api/queries.php' );
+        require_once( 'rest-api/format.php' );
+        require_once( 'export/export.php' );
+        
         $this->i18n();
 
         if ( is_admin() ) { // adds links to the plugin description area in the plugin admin list.
